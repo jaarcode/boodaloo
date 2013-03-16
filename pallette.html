@@ -1,0 +1,67 @@
+<html>
+   <head>
+      <script type='text/javascript'>
+        function mixit()
+        {
+           rcell=document.getElementById('redcell');
+           gcell=document.getElementById('greencell');
+           bcell=document.getElementById('bluecell');
+           mcell=document.getElementById('mixcell');
+           
+           ri=parseInt(document.getElementById('red').value)
+           ri=ri%256
+           gi=parseInt(document.getElementById('green').value)
+           gi=gi%256
+           bi=parseInt(document.getElementById('blue').value)
+           bi=bi%256
+
+           if( isNaN(ri) ) ri = 255
+           if( isNaN(gi) ) gi = 255
+           if( isNaN(bi) ) bi = 255
+
+           r=ri.toString(16);
+           g=gi.toString(16);
+           b=bi.toString(16);
+
+           rcell.innerHTML=rcell.innerHTML + "<br/>#" + r + "0000";
+           gcell.innerHTML=gcell.innerHTML + "<br/>#00" + g + "00";
+           bcell.innerHTML=bcell.innerHTML + "<br/>#0000" + b;
+           mcell.innerHTML=mcell.innerHTML + "<br/>#" + r + g + b;
+
+           rcell.bgColor= r + "0000";
+           gcell.bgColor="00" + g + "00";
+           bcell.bgColor="0000" + b;
+           mcell.bgColor= r + g + b;           
+        }
+      </script>
+   </head>
+   <body>
+     <form id='mixer' action='.' method='GET' name='mixer'>
+
+       <table id='paintpot' width='60%' height='60%'>
+         <caption>
+           Color values can be in a range from 0 to 255.  Press the <i>Mix!</i> button to show the color.
+         </caption>
+         <tr>
+           <td id='redcell' bgColor='ff0000' >
+             Red
+             <input id='red' name='red' type='text' value='128'/>
+           </td>
+           <td id='greencell' bgColor='00ff00'>
+             Green
+             <input id='green' name='green' type='text' value='64'/>
+           </td>
+         </tr>
+         <tr>
+           <td id='bluecell' bgColor='0000ff'>
+             Blue
+             <input id='blue' name='blue' type='text' value='192'/>
+           </td>
+           <td id='mixcell' bgColor='c0ffee'>
+             <input type='button' value='Mix!' onclick='mixit();return 0'/>
+           </td>
+         </tr>
+       </table>
+     </form>
+   </body>
+</html>
