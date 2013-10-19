@@ -23,10 +23,10 @@
            g=("00" + gi.toString(16)).substr(-2);
            b=("00" + bi.toString(16)).substr(-2);
 
-           rcell.innerHTML=rcell.innerHTML + "<div style='background-color:#" + r + "0000'>"+ ri.toString(10) + " = #" + r + "0000</div>";
-           gcell.innerHTML=gcell.innerHTML + "<div style='background-color:#00" + g + "00'>"+ gi.toString(10) + " = #00" + g + "00</div>";
-           bcell.innerHTML=bcell.innerHTML + "<div style='background-color:#0000" + b + "'>"+ bi.toString(10) + " = #0000" + b + "</div>";
-           mcell.innerHTML=mcell.innerHTML + "<div style='background-color:#" + r + g + b + "'>#" + r + g + b + "</div>";
+           rcell.innerHTML=rcell.innerHTML + "<div style='background-color:#" + r + "0000'>red("+ ri.toString(10) + ") = #" + r + "0000</div>";
+           gcell.innerHTML=gcell.innerHTML + "<div style='background-color:#00" + g + "00'>green("+ gi.toString(10) + ") = #00" + g + "00</div>";
+           bcell.innerHTML=bcell.innerHTML + "<div style='background-color:#0000" + b + "'>blue("+ bi.toString(10) + ") = #0000" + b + "</div>";
+           mcell.innerHTML=mcell.innerHTML + "<div style='background-color:#" + r + g + b + "'>rgb(" + r + g + b + ") = #" + r + g + b + "</div>";
 
            rcell.bgColor= r + "0000";
            gcell.bgColor="00" + g + "00";
